@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><title>溢价中枢偏离策略 · 四年数据验证</title>
+<style>body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f4f6f9;color:#18222e;line-height:1.65;padding:30px 18px;font-size:14px;}.wrap{max-width:1040px;margin:0 auto;}h1{font-size:26px;}h2{font-size:18px;margin:12px 0 6px;padding-left:10px;border-left:4px solid #2f6fb5;}table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:10px;}th,td{padding:7px 9px;border-bottom:1px solid #e8ecf1;text-align:center;}th{background:#f0f3f7;}.up{color:#d92b2b;font-weight:700;}.down{color:#12996b;font-weight:700;}.sec{background:#fff;border:1px solid #e8ecf1;border-radius:12px;padding:20px 24px;margin:16px 0;}.note{padding:12px 16px;margin-top:12px;border-radius:8px;font-size:13px;}.warn{background:#fff5e6;border-left:4px solid #e08a1e;}.ok{background:#e6f6ef;border-left:4px solid #12996b;}.red{background:#fdeaea;border-left:4px solid #d92b2b;}.v{background:linear-gradient(135deg,#fff7f7,#fff);border-left:6px solid #d92b2b;padding:20px 24px;border-radius:12px;margin:20px 0;}</style></head>
+<body><div class="wrap">
+<h1>溢价中枢偏离轮动策略 · 四年数据验证</h1>
+<p style="color:#5d6a7a;font-size:13px;">中间版本（4 年数据，旧口径 k=0）· 已被五年核实版取代，保留供审计追踪。</p>
+<div class="v"><b>结论：</b>方法论成立（偏离度均值回归），但当前 12 只全部处于历史 99%+ 分位，策略信号是空仓；转换成本后净超额约 +0.48%/年。此版数据口径后被发现有误（k=0），已在最终版修正为 k=−1。</div>
+<div class="sec"><h2>一、年度溢价中枢</h2><table><tr><th>年份</th><th>2022</th><th>2023</th><th>2024</th><th>2025</th><th>2026</th></tr><tr><td>年均溢价</td><td>1.27%</td><td>0.32%</td><td>1.53%</td><td>2.65%</td><td class="up">7.32%</td></tr></table><div class="note warn">中枢在 2026 年结构性断裂，滚动中枢从一年前 1.07% 升到 10.24%，回归的锚本身在移动。</div></div>
+<div class="sec"><h2>二、均值回归检验（120日滚动 Z）</h2><table><tr><th>阈值</th><th>样本</th><th>20日回落率</th><th>60日回落率</th></tr><tr><td>z&gt;2.0</td><td>944</td><td>95%</td><td>97%</td></tr><tr><td>z&gt;2.5</td><td>524</td><td class="down">98%</td><td class="down">99%</td></tr></table><div class="note ok">偏离度确实均值回归——用户的直觉被数据支持。</div></div>
+<div class="sec"><h2>三、回测（旧口径）</h2><table><tr><th>指标</th><th>策略</th><th>等权基准</th></tr><tr><td>年化</td><td>35.2%</td><td>30.7%</td></tr><tr><td>年化超额</td><td colspan="2">+3.52%，IR 0.83</td></tr><tr><td>换仓成本</td><td colspan="2">113 次，约 3.03%/年</td></tr><tr><td>净超额</td><td colspan="2">+0.48%/年</td></tr></table><div class="note red">注意：此版用 k=0 错误口径，最终版修正后净超额变为 −0.41%/年。以最终版为准。</div></div>
+<div class="sec"><h2>数据来源</h2><p style="font-size:12px;color:#95a0ad;">新浪财经历史行情 + 天天基金历史净值；此版口径 k=0（T价/T净值），后被校准为 k=−1。详见根目录 README 第四节。</p></div>
+</div></body></html>
