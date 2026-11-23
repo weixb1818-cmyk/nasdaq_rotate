@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><title>纳指ETF 溢价高低切换策略 · 可行性分析</title>
+<style>body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f4f6f9;color:#18222e;line-height:1.65;padding:30px 18px;font-size:14px;}.wrap{max-width:1020px;margin:0 auto;}h1{font-size:26px;}h2{font-size:19px;margin:12px 0 6px;}table{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px;}th,td{padding:8px 10px;border:1px solid #e8ecf1;text-align:center;}th{background:#f0f3f7;}.up{color:#d92b2b;font-weight:700;}.down{color:#12996b;font-weight:700;}.sec{background:#fff;border:1px solid #e8ecf1;border-radius:12px;padding:20px 24px;margin:16px 0;}.note{border-left:4px solid #e08a1e;background:#fff5e6;padding:12px 16px;margin-top:12px;}.v{background:#fdeaea;border-left:6px solid #d92b2b;padding:20px 24px;border-radius:12px;margin:20px 0;}.tag{background:#d92b2b;color:#fff;font-size:12px;padding:4px 12px;border-radius:20px;}</style></head>
+<body><div class="wrap">
+<h1>纳指ETF「溢价高低切换」策略 · 可行性分析</h1>
+<p style="color:#5d6a7a;font-size:13px;">早期版本（两周数据）· 已被五年版报告取代。此版记录最初的论证逻辑。</p>
+<div class="v"><span class="tag">核心结论 · 不可行</span><h2>作为稳定套利策略不成立；作为降低溢价敞口的选品思路才有部分价值</h2><p>同样跟踪纳斯达克100，各 ETF 溢价高低排序高度稳定（秩相关 0.90–0.97），不存在可反复套利的均值回归；切换博取的价差（约 4–6pct、需数周）远小于标的单日 4.8% 净值波动。风险收益严重不对称。</p></div>
+<div class="sec"><h2>证据一：溢价排序高度稳定</h2><p>四个时点（11/06、11/11、11/13、11/20）9 只 ETF 的 Spearman 秩相关为 0.90–0.97，排名几乎一致——嘉实永远最高，华夏/汇添富永远在低位。这是结构性差异，不是会收敛的噪音。</p></div>
+<div class="sec"><h2>证据二：切换收益取决于猜对时点</h2><table><tr><th>建仓时点</th><th>持有到11/20的切换相对收益</th></tr><tr><td>11/06</td><td class="up">+3.73%</td></tr><tr><td>11/11</td><td class="up">+0.83%</td></tr><tr><td>11/13</td><td class="down">−0.29%</td></tr></table><div class="note">同一策略，晚一周进场结果由正转负——收益来自对溢价见顶时点的预判，不可复制。</div></div>
+<div class="sec"><h2>证据三：风险收益不对称</h2><p>11/20 当日 12 只 ETF 跌幅 −4.21%~−5.64%（均值 −4.80%）。一天波动就超过切换数周才可能赚到的 3.73%。</p></div>
+<div class="sec"><h2>机制：溢价是待兑现成本</h2><p>QDII 外汇额度耗尽 → 限购 → 套利者无法场外申购、场内卖出 → 供给锁死，溢价长期维持。基金公司密集发布风险提示与临时停牌（如纳指科技ETF景顺年内停牌 204 次）。溢价回归时会直接冲减收益。</p></div>
+<div class="sec"><h2>数据来源</h2><p style="font-size:12px;color:#95a0ad;">溢价历史：格隆汇/新浪财经每日溢折率榜、qdiilimit.com；单日涨跌幅：A股行情；机制论述：上海证券报、中国基金报、华夏时报。注：本版结论基于早期两周数据与旧口径（k=0），数据源核实与五年数据见最终版报告。</p></div>
+</div></body></html>
